@@ -5,11 +5,16 @@ import java.util.GregorianCalendar;
 
 public class PrintCalendar {
     public static void main(String[] args) {
-        if (args.length != 2) {
+        if (args.length > 2) {
             System.out.println("Usage PrintCalendar month year");
             System.exit(1);
         }
-        printMonth(Integer.parseInt(args[1]), Integer.parseInt(args[0]));
+        if (args.length == 2)
+            printMonth(Integer.parseInt(args[1]), Integer.parseInt(args[0]));
+        else if (args.length == 1)
+            printMonth(new GregorianCalendar().get(Calendar.YEAR), Integer.parseInt(args[0]));
+        else
+            printMonth(new GregorianCalendar().get(Calendar.YEAR), new GregorianCalendar().get(Calendar.MONTH) + 1);
     }
 
     public static void printMonth(int year, int month) {
