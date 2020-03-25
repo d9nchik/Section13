@@ -1,5 +1,7 @@
 package com.d9nich.exercise5;
 
+import java.util.Objects;
+
 public abstract class GeometricObject implements Comparable<GeometricObject> {
     private String color = "white";
     private boolean filled;
@@ -55,6 +57,11 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
     @Override
     public int compareTo(GeometricObject o) {
         return Double.compare(getArea(), o.getArea());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, filled, dateCreated);
     }
 
     @Override
