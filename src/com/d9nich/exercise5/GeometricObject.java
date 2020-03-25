@@ -61,7 +61,7 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(color, filled, dateCreated);
+        return Objects.hashCode(getArea());
     }
 
     @Override
