@@ -78,7 +78,13 @@ public class Complex extends Number implements Comparable<Complex>, Cloneable {
 
     @Override
     public String toString() {
-        return "(" + a + " + " + b + "i)";
+        if (a == 0)
+            return b + "i";
+        if (b > 0)
+            return "(" + a + " + " + ((int) (b * (10000))) / 10000.0 + "*i)";
+        if (b == 0)
+            return a + "";
+        return "(" + a + " - " + ((int) (b * (-10000))) / 10000.0 + "*i)";
     }
 
     @Override
