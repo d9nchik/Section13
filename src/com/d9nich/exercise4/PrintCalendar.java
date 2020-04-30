@@ -40,11 +40,11 @@ public class PrintCalendar {
 
         int numberOfDaysInMonth = gregorianCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 
-        int i;
-        for (i = 0; i < startDay; i++)
-            System.out.print(" ");
 
-        for (i = 1; i <= numberOfDaysInMonth; i++) {
+        for (int i = 0; i < startDay; i++)
+            System.out.print("    ");
+
+        for (int i = 1; i <= numberOfDaysInMonth; i++) {
             System.out.printf("%4d", i);
 
             if ((i + startDay) % 7 == 0)
